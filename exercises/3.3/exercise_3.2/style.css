@@ -1,5 +1,5 @@
 div {
-    color: #515263;
+    color: #21323a;
 }
 
 div:hover {
@@ -10,8 +10,16 @@ div:nth-child(3) {
     background-color: #a9927d;
 }
 
+div:nth-child(3) h3 {
+    font-family: 'Segoe UI', sans-serif;
+}
+
 div:nth-child(4) {
-    background-color: #21323a;
+    background-color: #0fa1e4;
+}
+
+div:nth-child(4) h3 {
+    font-family: Tahoma;
 }
 
 div:nth-child(5) {
@@ -19,12 +27,24 @@ div:nth-child(5) {
     height: 5em;
 }
 
+div:nth-child(5) h3 {
+    font-family: Times New Roman;
+}
+
 div:nth-child(6) {
     background-color: #796451;
 }
 
+div:nth-child(6) h3 {
+    font-family: Arial;
+}
+
 div:nth-child(7) {
     background-color: #dbc2ac;
+}
+
+div:nth-child(7) h3 {
+    font-family: cursive;
 }
 
 div:nth-child(odd) h3 {

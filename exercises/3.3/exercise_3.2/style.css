@@ -1,3 +1,9 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 div {
     color: #21323a;
 }
@@ -6,47 +12,47 @@ div:hover {
     border: 1px solid black;
 }
 
-div:nth-child(3) {
+div:nth-of-type(1) {
     background-color: #a9927d;
 }
 
-div:nth-child(3) h3 {
+div:nth-of-type(1) h3 {
     font-family: 'Segoe UI', sans-serif;
 }
 
-div:nth-child(4) {
+div:nth-of-type(2) {
     background-color: #0fa1e4;
 }
 
-div:nth-child(4) h3 {
+div:nth-of-type(2) h3 {
     font-family: Tahoma;
 }
 
-div:nth-child(5) {
+div:nth-of-type(3) {
     background-color: #7d81a9;
     height: 5em;
 }
 
-div:nth-child(5) h3 {
+div:nth-of-type(3) h3 {
     font-family: Times New Roman;
 }
 
-div:nth-child(6) {
+div:nth-of-type(4) {
     background-color: #796451;
 }
 
-div:nth-child(6) h3 {
+div:nth-of-type(4) h3 {
     font-family: Arial;
 }
 
-div:nth-child(7) {
+div:nth-of-type(5) {
     background-color: #dbc2ac;
 }
 
-div:nth-child(7) h3 {
+div:nth-of-type(5) h3 {
     font-family: cursive;
 }
 
-div:nth-child(odd) h3 {
+div:nth-of-type(odd) h3 {
     font-style: italic;
 }

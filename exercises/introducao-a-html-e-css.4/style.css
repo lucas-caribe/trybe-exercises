@@ -98,14 +98,11 @@ article h2, article h3 {
 
 .scientific-name {
     font-size: .8em;
+    padding-bottom: 1.5em;
 }
 
 .mantis-image {
     width: 18em;
-}
-
-table th {
-    padding: .2em 0;
 }
 
 .name, .scientific-classification {
@@ -116,7 +113,46 @@ table th {
 }
 
 .classification-table {
-    width: 80%;
     margin: .4em auto;
-    text-align: left;
+}
+
+.classification-table td {
+    padding: .1em .8em;
+}
+
+/* references */
+
+.references a {
+    display: block;
+    margin-bottom: 1em; 
+}
+
+.references a:last-child {
+    margin-bottom: 2em;
+}
+
+/* video section */
+
+.video-section {
+    background-color: #00263e;
+    text-align: center;
+    padding: 2em 0;
+}
+
+.video-section h1 {
+    color: white;
+    margin-bottom: 1.5em;
+}
+
+/* footer */
+
+footer {
+    height: 10em;
+    text-align: center;
+    padding-top: 4.5em;
+}
+
+footer p {
+    color: #979797;
+    display: inline;
 }

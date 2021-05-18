@@ -10,7 +10,7 @@
 <body>
     <header>
         <nav>
-            <ul class="nav-content">
+            <ul class="nav-content container">
                 <li><a href="">Página Inicial</a></li>
                 <li><a href="">Sobre</a></li>
                 <li><a href="">Contato</a></li>
@@ -21,13 +21,13 @@
     </header>
 
     <main>
-        <article>
+        <article class="container">
             <h2>Fatos sobre o Stomatopoda</h2>
 
             <section>
                 <h3>Informações Gerais</h3>
 
-                <p>
+                <p class="general-info">
                     Stomatopoda (ou estomatópode), também conhecidos como <strong>tamarutacas</strong>,
                     <strong>lacraias-do-mar</strong> ou <strong>camarões louva-deus</strong>
                     (embora não sejam de fato camarões), é uma ordem de crustáceos marinhos que habitam águas tropicais
@@ -35,25 +35,47 @@
                     que são utilizados tanto como ferramenta quanto arma.
                 </p>
 
-                <aside>
-                    <table>
-                        <tbody>
-                            <tr><th>Stomatopoda</th></tr>
-                            <tr><th><img src="./assets/mantisshrimp.jpg" alt="Mantis Shrimp"></th></tr>
-                            <tr><th><em>Odontodactylus scyllarus</em></th></tr>
-                            <tr><th>Classificação científica</th></tr>
-                            <tr><th>Reino: Animalia</th></tr>
-                            <tr><th>Filo: Arthropoda</th></tr>
-                            <tr><th>Subfilo: Crustacea</th></tr>
-                            <tr><th>Classe: Malacostraca</th></tr>
-                            <tr><th>Subclasse: Hoplocarida</th></tr>
-                            <tr><th>Ordem: Stomatopoda</th></tr>
-                        </tbody>
+                <aside class="scientific-info">
+                    <table class="info-table">
+                        <tr><th class="name">Stomatopoda</th></tr>
+                        <tr><th><img class="mantis-image" src="./assets/mantisshrimp.jpg" alt="Mantis Shrimp"></th></tr>
+                        <tr><th class="scientific-name"><em>Odontodactylus scyllarus</em></th></tr>
+                        <tr><th class="scientific-classification">Classificação Científica</th></tr>
+                        <tr>
+                            <td class="classification">
+                                <table class="classification-table">
+                                    <tr>
+                                        <td>Reino:</td>
+                                        <td>Animalia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Filo:</td>
+                                        <td>Arthropoda</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Subfilo:</td>
+                                        <td>Crustacea</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Classe:</td>
+                                        <td>Malacostraca</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Subclasse:</td>
+                                        <td>Hoplocarida</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ordem:</td>
+                                        <td>Stomatopoda</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
                     </table>
                 </aside>
             </section>
 
-            <section>
+            <section class="super-vision">
                 <h3>Super visão</h3>
 
                 <p>
@@ -65,7 +87,7 @@
                 </p>
             </section>
 
-            <section>
+            <section class="super-punch">
                 <h3>Super soco</h3>
 
                 <p>
@@ -75,7 +97,7 @@
                 </p>
             </section>
 
-            <section>
+            <section class="adamantium-gloves">
                 <h3>Luvas de adamantium</h3>
 
                 <p>

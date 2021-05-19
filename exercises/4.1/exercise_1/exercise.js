@@ -6,6 +6,6 @@ let birthYear = 1992;
 
 console.log(name, birthCity, birthYear);
 
-birthYear = 1993;
+birthYear = 2030;
 
 console.log(birthYear);

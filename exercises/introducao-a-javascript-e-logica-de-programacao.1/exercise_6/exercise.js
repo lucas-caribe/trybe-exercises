@@ -1,6 +1,6 @@
-let chessPiece = 'PaWn';
+let chessPiece = 'Knight';
 
-chessPiece = chessPiece.toLocaleLowerCase();
+chessPiece = chessPiece.toLowerCase();
 
 switch(chessPiece) {
   case 'king': 

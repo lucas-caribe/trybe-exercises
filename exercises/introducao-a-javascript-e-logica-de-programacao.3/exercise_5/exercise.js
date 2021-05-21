@@ -3,7 +3,7 @@ let n = 9;
 for(let i = 0, maxStars = 1; i < n/2; i++, maxStars += 2) {
   let result = '';
   let maxSpaces = Math.floor(n/2 - i);
-  let lastLine = (i + 1) > n/2 ? true : false;
+  let lastLine = (i + 1) > n/2;
 
   for(let j = 0; j < maxSpaces; j++) {
     result += ' ';

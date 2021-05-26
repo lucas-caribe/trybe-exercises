@@ -40,15 +40,20 @@ function getFruitsCount(basket) {
 }
 
 let fruitsCount = getFruitsCount(basket);
+let lastFruit = Object.keys(fruitsCount).pop();
 let outputString = `Sua cesta possui: `;
 
 for(let fruit in fruitsCount) {
     let count = fruitsCount[fruit];
     
     if(count > 1) {
-        outputString += `${count} ${fruit}s, `;
+        outputString += `${count} ${fruit}s`;
     } else {
-        outputString += `${count} ${fruit}, `;
+        outputString += `${count} ${fruit}`;
+    }
+
+    if(fruit !== lastFruit) {
+        outputString += `, `;
     }
 
 }

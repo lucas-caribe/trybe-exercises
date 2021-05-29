@@ -34,6 +34,9 @@ button {
 	text-align: center;
 	vertical-align: middle;
 	width: 13.6%;
+	height: 30px;
+	cursor: pointer;
+	user-select: none;
 }
 
 .input-container {
@@ -76,7 +79,14 @@ label {
 	width: 49%;
 }
 
-.my-tasks div {
+.task-item {
+	height: 50px;
+	text-align: left;
+	vertical-align: middle;
+	border: 1px solid black;
+}
+
+.task-color {
 	border: 1px solid black;
 	border-radius: 100%;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -87,7 +97,7 @@ label {
 	width: 35px;
 }
 
-.my-tasks div:hover {
+.task-color:hover {
 	height: 45px;
 	width: 45px;
 }

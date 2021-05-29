@@ -156,7 +156,7 @@ const originalFontSize = days[0].style.fontSize;
 
 for (let day of days) {
 	day.addEventListener('mouseenter', (event) => {
-		event.target.style.fontSize = '23px';
+		event.target.style.fontSize = '25px';
 	});
 
 	day.addEventListener('mouseout', (event) => {
@@ -171,11 +171,26 @@ for (let day of days) {
 
 // O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui
 // a classe "my-tasks".
+const taskColors = [
+	'green',
+	'red',
+	'blue',
+	'orange'
+];
+
 function createTask(name) {
 	const myTasks = document.querySelector('.my-tasks');
 
-	const task = document.createElement('span');
-	task.innerText = name;
+	const task = document.createElement('div');
+	const taskName = document.createElement('span');
+  taskName.innerText = name;
+  task.appendChild(taskName);
+  task.className = 'task-item';
+
+  let randomColorIndex = Math.floor(Math.random() * 4);
+
+  addColor(task, taskColors[randomColorIndex]);
+  addColorSelector(task.lastChild);
 
 	myTasks.appendChild(task);
 
@@ -189,14 +204,12 @@ function createTask(name) {
 
 // O parâmetro cor deverá ser utilizado como cor de fundo da <div> criada.
 // O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks".
-function addColor(color) {
-	const myTasks = document.querySelector('.my-tasks');
-
+function addColor(task, color) {
 	const taskColor = document.createElement('div');
-	taskColor.className = 'task';
+	taskColor.className = 'task-color';
 	taskColor.style.backgroundColor = color;
 
-	myTasks.appendChild(taskColor);
+	task.appendChild(taskColor);
 
 	return taskColor;
 }
@@ -210,7 +223,7 @@ function addColor(color) {
 // ou seja, esta tarefa está deixando de ser uma tarefa selecionada.
 function addColorSelector(taskDiv) {
 	taskDiv.addEventListener('click', (event) => {
-		const selectedTask = document.querySelector('.my-tasks > .selected');
+		const selectedTask = document.querySelector('.my-tasks > .task-item .selected');
 		const div = event.target;
 
 		if (div === selectedTask) {
@@ -221,6 +234,8 @@ function addColorSelector(taskDiv) {
 		} else {
 			div.classList.add('selected');
 		}
+
+    console.log(selectedTask);
 	});
 }
 
@@ -234,7 +249,7 @@ const dayColor = 'rgb(119,119,119)';
 
 for (let day of days) {
 	day.addEventListener('click', (event) => {
-		const selectedTask = document.querySelector('.my-tasks > .selected');
+		const selectedTask = document.querySelector('.my-tasks > .task-item .selected');
 		const day = event.target;
 
 		if (selectedTask) {
@@ -261,16 +276,6 @@ for (let day of days) {
 const taskInput = document.querySelector('.input-container > input');
 const addTaskButton = document.querySelector('.input-container > button');
 
-const taskColors = [
-	'green',
-	'red',
-	'blue',
-	'yellow',
-	'orange',
-	'lightblue',
-	'lightgreen',
-];
-
 taskInput.addEventListener('keyup', (event) => {
 	if (event.keyCode === 13) {
 		event.preventDefault();
@@ -283,14 +288,9 @@ addTaskButton.addEventListener('click', (event) => {
 	event.preventDefault();
 
 	const text = taskInput.value;
-	console.log(text);
 
 	if (text.length > 0) {
-		let randomColorIndex = Math.floor(Math.random() * 7);
-
 		createTask(text);
-		const taskColorDiv = addColor(taskColors[randomColorIndex]);
-		addColorSelector(taskColorDiv);
 
 		taskInput.value = '';
 	} else {

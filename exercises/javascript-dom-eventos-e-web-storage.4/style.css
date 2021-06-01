@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto;
+}
+
+/* main */
+main {
+	height: 90vh;
+}
+
+.text-block {
+	width: 60%;
+	margin: 0 auto;
+	padding-top: 2em;
+	padding-bottom: 8em;
+}
+
+.text-block h1 {
+	text-align: center;
+	font-size: 2.5em;
+	margin-bottom: 1.3em;
+}
+
+/* settings */
+.settings {
+	position: fixed;
+	width: 100%;
+	height: 10vh;
+	background: rgb(19, 19, 19);
+	background: linear-gradient(
+		0deg,
+		rgb(10, 10, 10) 0%,
+		rgba(0, 0, 0, 1) 50%,
+		rgba(10, 10, 10, 1) 100%
+	);
+}
+
+.settings-container {
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+    
+	color: white;
+}
+
+.settings-container > div {
+	text-decoration: none;
+	list-style: none;
+	cursor: pointer;
+	user-select: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 2em;
+    position: relative;
+}
+
+.settings-container > div:hover{
+    text-shadow: .1px .1px white;
+}
+
+/* color picker */
+.color-picker {
+    position: absolute;
+	height: 40px;
+	padding: 5px 8px;
+	border-radius: 10px;
+	background: rgb(10, 10, 10);
+	box-shadow: 0 0 4px rgb(104, 104, 104);
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.bg-color-picker {
+    top: -30px;
+    left: -110px;
+}
+
+.text-color-picker {
+    top: -30px;
+    left: -150px;
+}
+
+.color-picker-item {
+	width: 30px;
+	height: 80%;
+	background: red;
+	border: 1px solid white;
+	cursor: pointer;
+}
+
+/* hiding elements */
+.hidden {
+    display: none;
+}

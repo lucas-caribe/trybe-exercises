@@ -267,6 +267,7 @@ function clearInputs(event) {
 	const allInputs = document.querySelectorAll('input');
 	const stateSelect = document.querySelector('#states');
 	const resumeInput = document.querySelector('#resume');
+	const cityDataList = document.querySelector('#city-data');
 
 	allInputs.forEach(input => {
 		if (input.type !== 'radio') {
@@ -278,6 +279,7 @@ function clearInputs(event) {
 
 	stateSelect.selectedIndex = 0;
 	resumeInput.value = '';
+	cityDataList.innerHTML = '';
 
 	allInputs[0].focus();
 }

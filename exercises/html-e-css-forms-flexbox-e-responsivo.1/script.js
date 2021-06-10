@@ -78,7 +78,7 @@ function validateEmail(emailId) {
 function validateCPF(cpfId) {
 	const cpfInput = document.querySelector(cpfId);
 	const cpf = cpfInput.value.trim();
-	const cpfPattern = /\d{3}\.\d{3}\.\d{3}-\d{2}/;
+	const cpfPattern = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
 
 	if (!cpf.match(cpfPattern)) {
 		throw new ValidationError('Erro! CPF inválido', cpfId);

@@ -269,7 +269,11 @@ function clearInputs(event) {
 	const resumeInput = document.querySelector('#resume');
 
 	allInputs.forEach(input => {
-		input.value = '';
+		if (input.type !== 'radio') {
+			input.value = '';
+		} else {
+			input.checked = false;
+		}
 	})
 
 	stateSelect.selectedIndex = 0;

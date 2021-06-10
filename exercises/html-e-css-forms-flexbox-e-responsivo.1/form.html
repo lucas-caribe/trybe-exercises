@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<link rel="stylesheet" href="style.css" />
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<form action="" method="get">
+			<fieldset>
+				<label for="name">Nome:</label>
+				<input type="text" maxlength="40" id="name" />
+
+				<label for="email">Email:</label>
+				<input
+					type="email"
+					maxlength="50"
+					id="email"
+					placeholder="email@exemplo.com"
+				/>
+
+				<label for="cpf">CPF:</label>
+				<input
+					type="text"
+					maxlength="14"
+					id="cpf"
+					placeholder="___.___.___-__"
+					onkeydown="handleCPFInput(event)"
+				/>
+
+				<label for="address">Endereço:</label>
+				<input type="text" maxlength="200" id="address" />
+
+				<label for="city">Cidade:</label>
+				<input
+					type="text"
+					id="city"
+					list="city-data"
+					maxlength="28"
+					autocomplete="off"
+				/>
+				<datalist id="city-data"></datalist>
+
+				<label for="states">Estado:</label>
+				<select name="states" id="states" onchange="handleStateChange(event)">
+					<option hidden default selected>- selecione um estado -</option>
+				</select>
+
+				<fieldset>
+					<legend>Tipo:</legend>
+
+					<input
+						type="radio"
+						name="housing-type"
+						id="type-house"
+						value="Casa"
+					/>
+					<label for="type-house">Casa</label>
+
+					<input
+						type="radio"
+						name="housing-type"
+						id="type-apartment"
+						value="Apartamento"
+					/>
+					<label for="type-apartment">Apartamento</label>
+				</fieldset>
+			</fieldset>
+
+			<fieldset>
+				<label for="resume">Resumo do currículo:</label>
+				<textarea id="resume" maxlength="1000"></textarea>
+
+				<label for="role">Cargo</label>
+				<input id="role" type="text" maxlength="40" />
+
+				<label for="description">Descrição do cargo:</label>
+				<input id="description" type="text" maxlength="500" />
+
+				<label for="date">Data de início:</label>
+				<input
+					type="text"
+					placeholder="dd/mm/aaaa"
+					id="date"
+					onkeydown="handleDateInput(event)"
+          maxlength="10"
+				/>
+			</fieldset>
+
+			<button type="submit" onclick="handleSubmit(event)">Enviar</button>
+			<button onclick="clearInputs(event)">Limpar</button>
+		</form>
+		<div id="form-data"></div>
+	</body>
+</html>

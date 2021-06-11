@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<link rel="stylesheet" href="style.css" />
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<div id="form-data"></div>
+
+		<header>
+			<div class="container">
+				<h1 class="title">Currículo</h1>
+			</div>
+		</header>
+
+		<section class="container">
+			<form action="" method="get">
+				<div class="form-item">
+					<label for="name">Nome:</label>
+					<input type="text" maxlength="40" id="name" placeholder="Nome" />
+				</div>
+
+				<div class="form-item">
+					<label for="email">Email:</label>
+					<input
+						type="email"
+						maxlength="50"
+						id="email"
+						placeholder="email@exemplo.com"
+					/>
+				</div>
+
+				<div class="form-item">
+					<label for="cpf">CPF:</label>
+					<input
+						type="text"
+						maxlength="14"
+						id="cpf"
+						placeholder="___.___.___-__"
+						onkeyup="handleCPFInput(event)"
+					/>
+				</div>
+
+				<div class="form-item">
+					<label for="address">Endereço:</label>
+					<input type="text" maxlength="200" id="address" />
+				</div>
+
+				<div class="form-item">
+					<label for="city">Cidade:</label>
+					<div class="city-inputs">
+						<input
+							type="text"
+							id="city"
+							list="city-data"
+							maxlength="28"
+							autocomplete="off"
+						/>
+						<datalist id="city-data"></datalist>
+
+						<select
+							name="states"
+							id="states"
+							onchange="handleStateChange(event)"
+						>
+							<option hidden default selected>UF</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-item">
+					<label>Tipo de moradia:</label>
+					<div class="housing-inputs">
+						<label for="type-house">
+							<input
+								type="radio"
+								name="housing-type"
+								id="type-house"
+								value="Casa"
+							/>
+							Casa
+						</label>
+
+						<label for="type-apartment">
+							<input
+								type="radio"
+								name="housing-type"
+								id="type-apartment"
+								value="Apartamento"
+							/>
+							Apartamento
+						</label>
+					</div>
+				</div>
+
+				<div class="form-item">
+					<label for="resume">Resumo do currículo:</label>
+					<textarea id="resume" maxlength="1000" class="textarea"></textarea>
+				</div>
+
+				<div class="form-item">
+					<label for="role">Cargo</label>
+					<input id="role" type="text" maxlength="40" />
+				</div>
+
+				<div class="form-item">
+					<label for="description">Descrição do cargo:</label>
+					<input id="description" type="text" maxlength="500" />
+				</div>
+
+				<div class="form-item">
+					<label for="date">Data de início:</label>
+					<input
+						type="text"
+						placeholder="dd/mm/aaaa"
+						id="date"
+						onkeyup="handleDateInput(event)"
+						maxlength="10"
+					/>
+				</div>
+
+				<div class="buttons">
+					<button class="confirm" type="submit" onclick="handleSubmit(event)">
+						Enviar
+					</button>
+					<button class="cancel" onclick="clearInputs(event)">Limpar</button>
+				</div>
+			</form>
+		</section>
+	</body>
+</html>

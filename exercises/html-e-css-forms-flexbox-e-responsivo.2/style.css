@@ -1,0 +1,117 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Oxygen,
+		Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica,
+		Arial, sans-serif;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.title {
+  padding: .8em 0;
+}
+
+/* form */
+form {
+  padding-bottom: 2em;
+}
+
+.form-item {
+  display: grid;
+  grid-auto-flow: row;
+  padding: .5em 0;
+}
+
+.form-item label {
+  margin-bottom: .5em;
+}
+
+.form-item input[type="text"],
+.form-item input[type="email"],
+.form-item textarea {
+  min-height: 3em;
+  border: 2px solid lightgray;
+  padding: .5em;
+  border-radius: 5px;
+  resize: vertical;
+  transition: border .2s ease-in-out;
+}
+
+.form-item input[type="text"]:focus-visible,
+.form-item input[type="email"]:focus-visible,
+.form-item textarea:focus-visible {
+  outline: none;
+  border: 2px solid rgb(16, 72, 255)
+}
+
+.city-inputs {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 4fr 1fr;
+}
+
+.city-inputs input {
+  border-radius: 5px 0 0 5px !important;
+}
+
+.city-inputs select {
+  padding: .9em 0;
+  background-color: lightgray;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  text-align: center;
+  transition: background-color .2s;
+}
+
+.city-inputs select:hover {
+  background-color: rgb(167, 167, 167);
+}
+
+.housing-inputs label:not(:nth-child(1)) {
+  margin-left: 1em;
+}
+
+/* buttons */
+.buttons {
+  width: max-content;
+  padding: 1em;
+  margin: 0 auto;
+}
+
+button {
+  width: 6em;
+  height: 3em;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: 700;
+  transition: background-color .2s ease;
+}
+
+button:not(:nth-child(1)) {
+  margin-left: .5em;
+}
+
+.confirm {
+  background-color: rgb(16, 72, 255);
+}
+
+.confirm:hover {
+  background-color: rgb(4, 56, 226);
+}
+
+.cancel {
+  background-color: rgb(218, 47, 47);
+}
+
+.cancel:hover {
+  background-color: rgb(240, 17, 17);
+}

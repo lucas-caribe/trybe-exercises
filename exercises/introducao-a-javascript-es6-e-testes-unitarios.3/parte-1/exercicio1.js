@@ -11,4 +11,4 @@ function sum(a, b) {
 // implemente seus testes aqui
 assert.strictEqual(sum(4, 5), 9, '4 + 5 should be equal to 9');
 assert.strictEqual(sum(0, 0), 0, '0 + 0 should be equal to 0');
-assert.throws(() => sum(4, '5'), 'Error: parameters must be numbers');
+assert.throws(() => sum(4, '5'), /^Error: parameters must be numbers$/);

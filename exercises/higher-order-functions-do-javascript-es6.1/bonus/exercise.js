@@ -1,3 +1,4 @@
+// nerf plz
 const mage = {
   healthPoints: 130,
   intelligence: 45,

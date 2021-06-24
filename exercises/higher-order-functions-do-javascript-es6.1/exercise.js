@@ -55,6 +55,7 @@ console.log(getRightAnswers(rightAnswers, studentAnswers, (rightAnswers, student
   
   rightAnswers.forEach((answer, index) => {
     if (answer === studentAnswers[index]) count++;
+    else if (studentAnswers[index] !== 'N.A') count -= 0.5;
   });
 
   return count;

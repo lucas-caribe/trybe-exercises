@@ -7,18 +7,14 @@ const expectedResult = false;
 
 const authorUnique = () => {
   const yearTable = {};
-  let found = false;
 
-  books.forEach(({ author }) => {
+  return !books.some(({ author }) => {
     if (yearTable[author.birthYear] === undefined) {
       yearTable[author.birthYear] = 1;
     } else {
-      found = true;
-      return null;
+      return true;
     }
   });
-
-  return !found;
 };
 
 assert.strictEqual(authorUnique(), expectedResult);

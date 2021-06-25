@@ -5,11 +5,11 @@ const books = require('../higher-order-functions-do-javascript-es6.2/books');
 const expectedResult = 'O Senhor dos Anéis';
 
 const authorWith3DotsOnName = () => {
-  const numberOfInitials = books.map(({ author }) =>
+  const initials = books.map(({ author }) =>
     author.name.replace(/[^\.]/g, ''),
   );
 
-  return books[numberOfInitials.indexOf('...')].name;
+  return books[initials.indexOf('...')].name;
 };
 
 assert.deepStrictEqual(authorWith3DotsOnName(), expectedResult);

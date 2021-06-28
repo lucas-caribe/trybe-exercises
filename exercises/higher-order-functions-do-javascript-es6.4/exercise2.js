@@ -8,7 +8,7 @@ const expectedResult =
 function reduceNames() {
   return books.reduce((accumulator, { author }, index) => {
     if (index === books.length - 1) return `${accumulator}${author.name}.`;
-    else return accumulator + `${author.name}, `;
+    else return `${accumulator}${author.name}, `;
   }, '');
 }
 

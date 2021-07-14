@@ -18,7 +18,7 @@ describe('Testing objects', () => {
     expect(obj1).toEqual(obj2);
   });
 
-  test('if obj1 is equal to obj3', () => {
-    expect(obj1).toEqual(obj2);
+  test('if obj1 is not equal to obj3', () => {
+    expect(obj1).not.toEqual(obj3);
   });
 });

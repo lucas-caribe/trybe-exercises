@@ -1,8 +1,7 @@
 {
-  "name": "10.1",
+  "name": "jest",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "jest"
   },
@@ -11,5 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^27.0.6"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1"
   }
 }

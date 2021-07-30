@@ -1,4 +1,4 @@
-let sallary = 5500.0;
+let sallary = 12000.0;
 let inss, ir = 0, irDeduction = 0;
 
 if(sallary > 0){

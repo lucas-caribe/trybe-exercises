@@ -1,0 +1,6 @@
+-- 1 - select language_id, MAX(replacement_cost) from film group by language_id;
+-- 2 - select rating, SUM(replacement_cost) as `replacement_cost_sum` from film
+--     group by rating order by `replacement_cost_sum` desc limit 1;
+-- 3 - select customer_id, avg(timediff(return_date, rental_date)) as `avg_return_time`
+--     from rental group by customer_id
+--     order by `avg_return_time` limit 1;

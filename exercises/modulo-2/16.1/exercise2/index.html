@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Informações do primeiro Reducer:</h1>
+      <p>Nome: <span id="nome-1">Rodrigo</span></p>
+      <p>Sobrenome: <span id="sobrenome-1">Santos da Silva</span></p>
+      <p>Endereço: <span id="endereco-1">Rua Soldado Mathias, 765</span></p>
+      <p>Cidade: <span id="cidade-1">Belo Horizonte</span></p>
+    </div>
+    <div id="container">
+      <h1>Informações do segundo Reducer:</h1>
+      <p>Nome: <span id="nome-2">Bruna</span></p>
+      <p>Sobrenome: <span id="sobrenome-2">Santana Oliveira</span></p>
+      <p>Endereço: <span id="endereco-2">Rua Holanda, 332</span></p>
+      <p>Cidade: <span id="cidade-2">São Paulo</span></p>
+    </div>
+    <script>
+      const FIRST_CHANGE_FIRST_NAME = 'FIRST_CHANGE_FIRST_NAME';
+      const FIRST_CHANGE_LAST_NAME = 'FIRST_CHANGE_LAST_NAME';
+      const SECOND_CHANGE_FIRST_NAME = 'SECOND_CHANGE_FIRST_NAME';
+      const SECOND_CHANGE_LAST_NAME = 'SECOND_CHANGE_LAST_NAME';
+
+      const ESTADO_INICIAL_1 = {
+        nome: 'Rodrigo',
+        sobrenome: 'Santos da Silva',
+        endereco: 'Rua Soldado Mathias, 765',
+        cidade: 'Belo Horizonte',
+      };
+
+      const ESTADO_INICIAL_2 = {
+        nome: 'Bruna',
+        sobrenome: 'Santana Oliveira',
+        endereco: 'Rua Holanda, 332',
+        cidade: 'São Paulo',
+      };
+
+      const firstChangeFirstName = (name) => {
+        return {
+          type: FIRST_CHANGE_FIRST_NAME,
+          payload: name,
+        };
+      };
+
+      const firstChangeLastName = (name) => {
+        return {
+          type: FIRST_CHANGE_LAST_NAME,
+          payload: name,
+        };
+      };
+
+      const secondChangeFirstName = (name) => {
+        return {
+          type: SECOND_CHANGE_FIRST_NAME,
+          payload: name,
+        };
+      };
+
+      const secondChangeLastName = (name) => {
+        return {
+          type: SECOND_CHANGE_LAST_NAME,
+          payload: name,
+        };
+      };
+
+      const meuPrimeiroReducer = (state = ESTADO_INICIAL_1, action) => {
+        switch (action.type) {
+          case FIRST_CHANGE_FIRST_NAME:
+            return { ...state, nome: action.payload };
+          case FIRST_CHANGE_LAST_NAME:
+            return { ...state, sobrenome: action.payload };
+          default:
+            return state;
+        }
+      };
+
+      const meuSegundoReducer = (state = ESTADO_INICIAL_2, action) => {
+        switch (action.type) {
+          case SECOND_CHANGE_FIRST_NAME:
+            return { ...state, nome: action.payload };
+          case SECOND_CHANGE_LAST_NAME:
+            return { ...state, sobrenome: action.payload };
+          default:
+            return state;
+        }
+      };
+
+      const rootReducer = Redux.combineReducers({
+        meuPrimeiroReducer,
+        meuSegundoReducer,
+      });
+
+      const store = Redux.createStore(rootReducer);
+
+      const updateUserInfo = () => {
+        const { meuPrimeiroReducer, meuSegundoReducer } = store.getState();
+
+        const { nome: nome1, sobrenome: sobrenome1 } = meuPrimeiroReducer;
+        const { nome: nome2, sobrenome: sobrenome2 } = meuSegundoReducer;
+
+        const nome1Element = document.querySelector('#nome-1');
+        const sobrenome1Element = document.querySelector('#sobrenome-1');
+        const nome2Element = document.querySelector('#nome-2');
+        const sobrenome2Element = document.querySelector('#sobrenome-2');
+
+        nome1Element.innerText = nome1;
+        sobrenome1Element.innerText = sobrenome1;
+
+        nome2Element.innerText = nome2;
+        sobrenome2Element.innerText = sobrenome2;
+      }
+
+      store.subscribe(updateUserInfo);
+
+      window.onload = () => {
+        const { meuPrimeiroReducer, meuSegundoReducer } = store.getState();
+        console.log(meuPrimeiroReducer, meuSegundoReducer);
+
+        setTimeout(() => {
+          store.dispatch(firstChangeFirstName('Lucas'));
+          store.dispatch(firstChangeLastName('Caribé'));
+          const { meuPrimeiroReducer, meuSegundoReducer } = store.getState();
+
+          console.log(meuPrimeiroReducer, meuSegundoReducer);
+        }, 3000);
+      };
+    </script>
+  </body>
+</html>

@@ -27,6 +27,13 @@ app.get('/drinks', (req, res) => {
   res.json(drinksCopy.sort(nameCompare));
 });
 
+app.get('/drink/:id', (req, res) => {
+  const { id } = req.params;
+  const drink = drinks.find(({ id: drinkId }) => Number(id) === drinkId);
+
+  res.json(drink);
+});
+
 app.get('/recipes', (req, res) => {
   const recipesCopy = [...recipes];
 
